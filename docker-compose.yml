@@ -36,6 +36,7 @@ services:
       - .:/app
     ports:
       - '8000:8000'
+      - '3000:3000' #debugging service ptvsd
     depends_on:
       - mysql
       - redis

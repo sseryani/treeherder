@@ -378,7 +378,10 @@ if DEBUG:
     }
 
     INSTALLED_APPS.append('debug_toolbar')
-
+    # used for remote debugging in docker containers (VSCode)
+    # import ptvsd
+    # ptvsd.enable_attach(address=('0.0.0.0', 3000))
+    # ptvsd.wait_for_attach()
 
 # Rest Framework
 REST_FRAMEWORK = {
