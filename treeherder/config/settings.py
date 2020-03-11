@@ -9,7 +9,6 @@ import environ
 from furl import furl
 from kombu import (Exchange,
                    Queue)
-
 from treeherder.config.utils import (connection_should_use_tls,
                                      get_tls_redis_url)
 
@@ -25,6 +24,9 @@ IS_WINDOWS = "windows" in platform.system().lower()
 DEBUG = env.bool("TREEHERDER_DEBUG", default=False)
 
 NEW_RELIC_DEVELOPER_MODE = env.bool("NEW_RELIC_DEVELOPER_MODE", default=True if DEBUG else False)
+
+NEW_RELIC_INSIGHTS_API_KEY = env("NEW_RELIC_INSIGHTS_API_KEY", default=None)
+NEW_RELIC_INSIGHTS_API_URL = 'https://insights-api.newrelic.com/v1/accounts/677903/query'
 
 # Papertrail logs WARNING messages. This env variable allows modifying the behaviour
 LOGGING_LEVEL = env.str("LOGGING_LEVEL", default='INFO')
